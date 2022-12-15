@@ -1,0 +1,40 @@
+1) show databases;
+2) create database payroll_service;
+3) use payroll_service;
+4) create table table_name
+(
+	id int AUTO_INCREMENT,
+	name varchar(10),
+	salary double, 
+	start_date date,
+	PRIMARY KEY(id)
+);
+5) show tables;
+6)  Insert Query : 
+insert into employee_payroll values(1,"Jack",100000.0,'2020-08-20');
+insert into employee_payroll values(3,"Jesica",150000.0,"2021-03-31"), (4, "Stefan",200000.0,"2019-01-15");
+insert into employee_payroll(name, salary, start_date) value("Qwerty",88778.23,"2020-09-09");
+
+7) Select Query : 
+select * from employee_payroll;
+select name, salary from employee_payroll;
+8) Where CLAUSE :
+select * from employee_payroll where name = 'mike';
+select * from employee_payroll where salary >= 100000;
+select * from employee_payroll where start_date between CAST('2020-01-01' AS DATE) AND CAST('2020-12-31' AS DATE);
+select * from employee_payroll where salary between 80000 AND 100000;
+9) desc employee_payroll;
+10) Update the table schema :
+alter table employee_payroll add column gender varchar(1);
+11) Update the table data (records) :
+update employee_payroll set gender='F' where name = "jesica" or name="qwerty";
+update employee_payroll set gender='M' where gender IS NULL;
+
+12) SUM, AVG, MIN, MAX
+select sum(name) from employee_payroll;
+select avg(salary) from employee_payroll;
+select min(salary) from employee_payroll;
+select max(salary) from employee_payroll;
+select count(*) from employee_payroll;
+select gender, sum(salary) from employee_payroll group by gender;
+	

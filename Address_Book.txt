@@ -1,0 +1,48 @@
+ show databases;
+ create database Address_Book_Service;
+ use Address_Book_Service;
+create table Address_book(sr_no int AUTO_INCREMENT,first_name varchar(10),last_name varchar(10),address varchar(10),city varchar(10),state varchar(10),zip int,phone_number long,email varchar(10),primary key(sr_no));
+ select * from Address_book_service;
+ desc Address_book;
+
+
+
+ insert into Address_book values(1,"Sahil","Khan","Ambazari","Nagpur","MH",441401,7775035369,"sk@gm.com");
+ insert into Address_book values(2,"Samir","Pathan","Ambazari","Nagpur","MH",441401,7775045679,"sp@gm.com");
+ insert into Address_book values(3,"Prodip","Nakhate","Ambazari","Nagpur","MH",441401,987687679,"Pn@gm.com");
+ insert into Address_book values(3,"Bhushan","Raut","Nagpur","Nagpur","MH",441401,988979667,"br@gm.com");
+
+UC4:
+update Address_Book set First_name="Ninad",Last_name="Burde",address="paoni" where first_name="Sahil";
+
+UC5;
+
+delete from Address_book where first_name="Prodip";
+
+UC6;
+
+ select * from Address_Book where City="Nagpur";
+
+UC7;
+
+ select count(*) from Address_Book;
+
+
+UC8;
+select first_name,last_name from Address_Book order by city=ASC;
+select first_name,last_name from Address_Book order by first_name ASC;
+
+
+
+UC9;
+
+alter table Address_Book add type varchar(10);
+update Address_Book set type="Family" where first_name="Ninad" or first_Name="Bhushan";
+update Address_Book set Type="Chandrapur" where first_name="Samir" or first_Name="Prodip";
+update Address_Book set city="Profession" where first_name="Kamran";
+
+UC10;
+
+select type,count(*) from Address_Book group by type;
+
+
